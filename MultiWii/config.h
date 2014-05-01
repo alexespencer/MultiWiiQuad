@@ -60,7 +60,7 @@
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 1100 // (*) (**)
+    #define MINTHROTTLE 1000 // (*) (**)
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
@@ -180,7 +180,7 @@
 
       /* I2C barometer */
       //#define BMP085
-      //#define MS561101BA
+      #define MS561101BA
 
       /* I2C magnetometer */
       //#define HMC5843
