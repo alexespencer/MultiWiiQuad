@@ -20,7 +20,7 @@
     <LOGNAV value="True" />
     <LOGPAR value="True" />
     <LOGDBG value="True" />
-    <MAPPROVIDER value="1" />
+    <MAPPROVIDER value="2" />
     <SPEECH_ENABLED value="True" />
     <CELLCOUNT value="3" />
     <MAX_WP_NUMBER value="100" />
