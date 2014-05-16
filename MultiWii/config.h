@@ -185,7 +185,7 @@
       /* I2C magnetometer */
       //#define HMC5843
       //#define HMC5883
-      //#define AK8975
+      #define AK8975
       //#define MAG3110
 
       /* Sonar */ // for visualization purpose currently - no control code behind
@@ -385,7 +385,7 @@
     /*********************************    Aux 2 Pin     ***********************************/
       /* possibility to use PIN8 or PIN12 as the AUX2 RC input (only one, not both)
          it deactivates in this case the POWER PIN (pin 12) or the BUZZER PIN (pin 8) */
-      #define RCAUXPIN8
+      //#define RCAUXPIN8
       //#define RCAUXPIN12
 
 
@@ -634,8 +634,8 @@
        in NMEA mode the GPS must be configured to output GGA and RMC NMEA sentences (which is generally the default conf for most GPS devices)
        at least 5Hz update rate. uncomment the first line to select the GPS serial port of the arduino */
        
-    //#define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
-    //#define GPS_PROMINI_SERIAL   // Will Autosense if GPS is connected when ardu boots.
+    #define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
+    //define GPS_PROMINI_SERIAL   // Will Autosense if GPS is connected when ardu boots.
 
     // avoid using 115200 baud because with 16MHz arduino the 115200 baudrate have more than 2% speed error (57600 have 0.8% error)
     #define GPS_BAUD   57600
@@ -648,7 +648,7 @@
 
     
     //#define NMEA
-    //#define UBLOX
+    #define UBLOX
     //#define MTK_BINARY16
     //#define MTK_BINARY19
     //#define INIT_MTK_GPS        // initialize MTK GPS for using selected speed, 5Hz update rate and GGA & RMC sentence or binary settings
