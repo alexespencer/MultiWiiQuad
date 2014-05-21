@@ -199,8 +199,8 @@
 
       /* enforce your individual sensor orientation - even overrides board specific defaults */
       #define FORCE_ACC_ORIENTATION(X, Y, Z)  {imu.accADC[ROLL]  =  X; imu.accADC[PITCH]  = Y; imu.accADC[YAW]  = Z;}
-      #define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] =  X; imu.gyroADC[YAW] = Z;}
-      //#define FORCE_MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  =  X; imu.magADC[PITCH]  =  Y; imu.magADC[YAW]  = Z;}
+      #define FORCE_GYRO_ORIENTATION(X, Y, Z) {imu.gyroADC[ROLL] = -Y; imu.gyroADC[PITCH] =  X; imu.gyroADC[YAW] = -Z;}
+      #define FORCE_MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  =  -Y; imu.magADC[PITCH]  =  -X; imu.magADC[YAW]  = Z;}
 
       /* Board orientation shift */
       /* If you have frame designed only for + mode and you cannot rotate FC phisycally for flying in X mode (or vice versa)
@@ -571,7 +571,7 @@
     //#define FAILSAFE                                // uncomment  to activate the failsafe function
     #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
     #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
-    #define FAILSAFE_THROTTLE  (MINTHROTTLE + 50)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
+    #define FAILSAFE_THROTTLE  (MINTHROTTLE + 110)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
     
     #define FAILSAFE_DETECT_TRESHOLD  985
 
@@ -686,7 +686,7 @@
        Convert the degree+minutes into decimal degree by ==> degree+minutes*(1/60)
        Note the sign on declination it could be negative or positive (WEST or EAST) */
     //#define MAG_DECLINATION  3.96f              //For Budapest Hungary.
-    #define MAG_DECLINATION  0.0f   //(**)
+    #define MAG_DECLINATION  -1.51f
 
     #define GPS_LEAD_FILTER                      // Adds a forward predictive filterig to compensate gps lag. Code based on Jason Short's lead filter implementation
     
@@ -807,7 +807,7 @@
        with R1=33k and R2=51k
        vbat = [0;1023]*16/VBATSCALE
        must be associated with #define BUZZER ! */
-    #define VBAT              // uncomment this line to activate the vbat code
+    //#define VBAT              // uncomment this line to activate the vbat code
     #define VBATSCALE       104 // (*) (**) change this value if readed Battery voltage is different than real voltage
     #define VBATNOMINAL     126 // 12,6V full battery nominal voltage - only used for lcd.telemetry
     #define VBATLEVEL_WARN1 107 // (*) (**) 10,7V
