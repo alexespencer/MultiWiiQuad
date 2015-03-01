@@ -1,0 +1,9 @@
+144606-0446_oldQuad_minus10pc
+*Fast wobble
+
+144606-0446_oldQuad_minus10pc_withextraminus_P
+*Medium wobble
+*Sluggish to respond (mainly because only I is stabilising it - or Level P is fighting for you)
+
+144606-0446_oldQuad_minus10pc_withextraminus_I
+-Untested-

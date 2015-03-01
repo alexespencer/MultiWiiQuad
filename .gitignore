@@ -213,3 +213,6 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+WinGUI/mapcache/*
+WinGUI/mapcache/UrlCache/37-A9-49-C7-4A-D8-F6-87-4C-75-2E-66-C4-44-35-CE-CC-83-E0-4D.txt
