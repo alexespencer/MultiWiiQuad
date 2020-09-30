@@ -60,7 +60,7 @@
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 990 // (*) (**)
+    #define MINTHROTTLE 1000 // (*) (**)
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
@@ -72,8 +72,8 @@
     #define MINCOMMAND  900
 
   /**********************************    I2C speed   ************************************/
-    #define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
-    //#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
+    //#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
+    #define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
 
   /***************************    Internal i2c Pullups   ********************************/
     /* enable internal I2C pull ups (in most cases it is better to use external pullups) */
@@ -129,7 +129,7 @@
       //#define GY_80           // Chinese 10 DOF with  L3G4200D ADXL345 HMC5883L BMP085, LLC
       //#define GY_85           // Chinese 9 DOF with  ITG3205 ADXL345 HMC5883L LLC
       //#define GY_86           // Chinese 10 DOF with  MPU6050 HMC5883L MS5611, LLC
-      //#define GY_521          // Chinese 6  DOF with  MPU6050, LLC
+      #define GY_521          // Chinese 6  DOF with  MPU6050, LLC
       //#define INNOVWORKS_10DOF // with ITG3200, BMA180, HMC5883, BMP085 available here http://www.diymulticopter.com
       //#define INNOVWORKS_6DOF // with ITG3200, BMA180 available here http://www.diymulticopter.com
       //#define MultiWiiMega    // MEGA + MPU6050+HMC5883L+MS5611 available here http://www.diymulticopter.com
@@ -163,7 +163,7 @@
       //#define ITG3200
       //#define MPU3050
       //#define L3G4200D
-      #define MPU6050       //combo + ACC
+      //#define MPU6050       //combo + ACC
       //#define LSM330        //combo + ACC
       
       /* I2C accelerometer */
@@ -180,12 +180,12 @@
 
       /* I2C barometer */
       //#define BMP085
-      #define MS561101BA
+      //#define MS561101BA
 
       /* I2C magnetometer */
       //#define HMC5843
       //#define HMC5883
-      #define AK8975
+      //#define AK8975
       //#define MAG3110
 
       /* Sonar */ // for visualization purpose currently - no control code behind
@@ -334,6 +334,7 @@
       //#define SERIAL_SUM_PPM         ROLL,PITCH,THROTTLE,YAW,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For Robe/Hitec/Futaba
       //#define SERIAL_SUM_PPM         ROLL,PITCH,YAW,THROTTLE,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For Multiplex
       //#define SERIAL_SUM_PPM         PITCH,ROLL,THROTTLE,YAW,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For some Hitec/Sanwa/Others
+	#define SERIAL_SUM_PPM         THROTTLE,YAW,PITCH,ROLL,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For PPM Based Receivers
 
       // Uncommenting following line allow to connect PPM_SUM receiver to standard THROTTLE PIN on MEGA boards (eg. A8 in CRIUS AIO)
       //#define PPM_ON_THROTTLE
@@ -440,7 +441,7 @@
 
   /* only enable any of this if you must change the default pin assignment, e.g. your board does not have a specific pin */
   /* you may need to change PINx and PORTx plus #shift according to the desired pin! */
-  #define OVERRIDE_V_BATPIN                   A0 // instead of A3    // Analog PIN 3
+  //#define OVERRIDE_V_BATPIN                   A0 // instead of A3    // Analog PIN 3
 
   //#define OVERRIDE_PSENSORPIN                 A1 // instead of A2    // Analog PIN 2
 
@@ -499,7 +500,7 @@
          balancing options ran out. Uncomment only one option!
          IMPORTANT! Change low pass filter setting changes PID behaviour, so retune your PID's after changing LPF.*/
       //#define MPU6050_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
-      #define MPU6050_LPF_188HZ
+      //#define MPU6050_LPF_188HZ
       //#define MPU6050_LPF_98HZ
       //#define MPU6050_LPF_42HZ
       //#define MPU6050_LPF_20HZ
@@ -634,11 +635,11 @@
        in NMEA mode the GPS must be configured to output GGA and RMC NMEA sentences (which is generally the default conf for most GPS devices)
        at least 5Hz update rate. uncomment the first line to select the GPS serial port of the arduino */
        
-    #define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
+    //#define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
     //define GPS_PROMINI_SERIAL   // Will Autosense if GPS is connected when ardu boots.
 
     // avoid using 115200 baud because with 16MHz arduino the 115200 baudrate have more than 2% speed error (57600 have 0.8% error)
-    #define GPS_BAUD   57600
+   // #define GPS_BAUD   57600
 
    /* GPS protocol 
        NMEA  - Standard NMEA protocol GGA, GSA and RMC  sentences are needed
@@ -648,7 +649,7 @@
 
     
     //#define NMEA
-    #define UBLOX
+    //#define UBLOX
     //#define MTK_BINARY16
     //#define MTK_BINARY19
     //#define INIT_MTK_GPS        // initialize MTK GPS for using selected speed, 5Hz update rate and GGA & RMC sentence or binary settings
